@@ -52,8 +52,7 @@ def constraint2(weights_matrix):
 
 
 stock_list = []
-start_date = dt.datetime(1980, 1, 1)
-#initialize start date and list for stocks- to be used later on
+#initialize list for stocks- to be used later on
 
 try:
     numberofStocks = int(input("How many stocks would you like in your portfolio? \n"))
