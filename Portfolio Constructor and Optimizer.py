@@ -2,7 +2,6 @@
 #Name: Bilal Mustafa
 #Date: 3/13/2018
 
-import datetime as dt
 import sys
 from pandas_datareader import data, wb
 import numpy as np
@@ -63,10 +62,20 @@ except:
 
 for i in range(numberofStocks):
     stock_list.append(input("Enter ticker for stock " + str(i+1) + ':\n'))
+    for char in stock_list[i]:
+        if char == ' ':
+            print("Error - whitespace in ticker")
+            sys.exit()
+    if stock_list[i] == "" or stock_list[i] == "\n":
+        print("Error - incorrect ticker")
+        sys.exit()
 #ask for and create a list of the stock tickers for our desired portfolio
 
 option = input("Press 1 if you want your portfolio optimized for a given return OR Press 2 if you want an optimized sharpe ratio for any return \n")
 option = int(option)
+if option != 2 and option != 1:
+    print("Error - incorrect input")
+    sys.exit()
 #ask for the objective of this program- absolute optimization & variance minimization or optimization given a desired
 #return
 
