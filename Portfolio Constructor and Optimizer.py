@@ -77,7 +77,7 @@ for i in range(numberofStocks):
         sys.exit()
 #ask for and create a list of the stock tickers for our desired portfolio
 
-option = input("Press 1 if you want your portfolio optimized for a given return OR Press 2 if you want an optimized sharpe ratio for any return \n")
+option = input("Press 1 if you want your portfolio optimized for a given return OR Press 2 if you want an optimal sharpe ratio for any return. \n")
 option = int(option)
 if option != 2 and option != 1:
     print("Error - incorrect input")
