@@ -1,6 +1,9 @@
 #Project: Portfolio Construction and Optimization
 #Name: Bilal Mustafa
 #Date: 3/13/2018
+#Description: This program takes a list of stock that you would like in your portfolio and returns
+#the optimal (risk adjusted return) portfolio as well as the minimum variance portfolio. If you desire a specific
+#return, it will give the mix that minimizes variance (optimal) for that given return.
 
 import sys
 from pandas_datareader import data, wb
@@ -55,6 +58,9 @@ stock_list = []
 
 try:
     numberofStocks = int(input("How many stocks would you like in your portfolio? \n"))
+    if numberofStocks <= 0:
+        print("Error - A portfolio requires 1 or more stocks")
+        sys.exit()
 except:
     print('Error Wrong Type')
     sys.exit()
